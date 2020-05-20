@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+</head>
+<body>
+    <h2> Choose action: </h2>
+    <ul>
+        {% for key, value in menu.items %}
+        <li>
+            <a href="/get_ticket/{{ key }}">{{ value }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

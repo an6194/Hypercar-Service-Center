@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operator Menu</title>
+</head>
+<body>
+    {% for key, value in queue.items %}
+        {% if key == "change_oil" %}
+            <div>Change oil queue: {{ value|length }}</div>
+        {% elif key == "inflate_tires" %}
+            <div>Inflate tires queue: {{ value|length }}</div>
+        {% elif key == "diagnostic" %}
+            <div>Get diagnostic queue: {{ value|length }}</div>
+        {% endif %}
+    {% endfor %}
+
+    <form method="post">{% csrf_token %}
+        <button type="submit">Process next</button>
+    </form>
+</body>
+</html>
